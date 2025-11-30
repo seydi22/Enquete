@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <div className="text-center sm:text-left mb-4 sm:mb-0">
             <p className="text-sm text-text-secondary">
-              &copy; {currentYear} Data Rapports. Tous droits réservés.
+              &copy; {currentYear} Seydi Dieng. Tous droits réservés.
             </p>
           </div>
           <div className="flex items-center space-x-6">
