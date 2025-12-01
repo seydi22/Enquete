@@ -119,7 +119,9 @@ const FormulaireComparatif = () => {
             { pratique: 'Réduction de l’usage des produits chimiques', avantProjet: '', introduiteRenforcee: '', impactObserve: '' },
             { pratique: 'Autre (à préciser)', avantProjet: '', introduiteRenforcee: '', impactObserve: '' },
         ],
-        impactGlobal: { ameliorationsPratiquesAgricoles: '', formationsBeneficie: '', formationsTheme: '', appreciationEncadrementTechnique: '', contributionProductiviteRentabilite: '', durabiliteChangementsIntroduits: '', difficultesPersistantes: '', recommandationsAgricultureDurable: '' },
+        impactGlobal: { ameliorationsPratiquesAgricoles: '', formationsBeneficie: '', formationsTheme: '', appreciationEncadrementTechnique: '',             contributionProductiviteRentabilite: '',
+            contributionCommercialisationProduction: '', // New field for commercialization
+            durabiliteChangementsIntroduits: '', difficultesPersistantes: '', recommandationsAgricultureDurable: '' },
         syntheseObservations: { observationsGenerales: '', appreciationGlobaleEvolution: '', signatures: '' },
     });
     const [message, setMessage] = useState('');
@@ -388,6 +390,7 @@ const FormulaireComparatif = () => {
                 <FieldWrapper label="Comment appréciez-vous l’encadrement technique ?"><Textarea name="impactGlobal.appreciationEncadrementTechnique" value={formData.impactGlobal.appreciationEncadrementTechnique} onChange={handleChange} /></FieldWrapper>
                 
                 <FieldWrapper label="Le projet a-t-il contribué à une meilleure productivité et rentabilité ?"><Textarea name="impactGlobal.contributionProductiviteRentabilite" value={formData.impactGlobal.contributionProductiviteRentabilite} onChange={handleChange} /></FieldWrapper>
+                <FieldWrapper label="Le projet a-t-il contribué à une meilleure commercialisation de votre production ?"><Textarea name="impactGlobal.contributionCommercialisationProduction" value={formData.impactGlobal.contributionCommercialisationProduction} onChange={handleChange} /></FieldWrapper>
                 <FieldWrapper label="Comment évaluez-vous la durabilité des changements introduits ?"><Textarea name="impactGlobal.durabiliteChangementsIntroduits" value={formData.impactGlobal.durabiliteChangementsIntroduits} onChange={handleChange} /></FieldWrapper>
                 <FieldWrapper label="Quelles sont les principales difficultés persistantes ?"><Textarea name="impactGlobal.difficultesPersistantes" value={formData.impactGlobal.difficultesPersistantes} onChange={handleChange} /></FieldWrapper>
                 <FieldWrapper label="Quelles recommandations feriez-vous pour renforcer l’agriculture durable ?"><Textarea name="impactGlobal.recommandationsAgricultureDurable" value={formData.impactGlobal.recommandationsAgricultureDurable} onChange={handleChange} /></FieldWrapper>
