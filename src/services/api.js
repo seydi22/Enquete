@@ -16,7 +16,13 @@ export const createParticipative = (data) => {
 };
 
 export const getComparatifs = () => {
-  return apiClient.get('/comparatif');
+  return apiClient.get('/comparatif').then(response => {
+    console.log("Axios getComparatifs response:", response);
+    return response;
+  }).catch(error => {
+    console.error("Axios getComparatifs error:", error);
+    throw error;
+  });
 };
 
 export const getComparatifById = (id) => {
@@ -32,7 +38,13 @@ export const deleteComparatif = (id) => {
 };
 
 export const getParticipatives = () => {
-  return apiClient.get('/participative');
+  return apiClient.get('/participative').then(response => {
+    console.log("Axios getParticipatives response:", response);
+    return response;
+  }).catch(error => {
+    console.error("Axios getParticipatives error:", error);
+    throw error;
+  });
 };
 
 export const getParticipativeById = (id) => {
