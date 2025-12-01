@@ -51,14 +51,11 @@ const AdminDashboard = () => {
           getParticipatives()
         ]);
         
-        console.log("AdminDashboard - Full Comparatifs API Response Object:", comparatifsRes);
-        console.log("AdminDashboard - Comparatifs Data (comparatifsRes?.data):", comparatifsRes?.data);
-        console.log("AdminDashboard - Full Participatives API Response Object:", participativesRes);
-        console.log("AdminDashboard - Participatives Data (participativesRes?.data):", participativesRes?.data);
+
         
         // Add safety checks to ensure data is an array
-        setComparatifs(Array.isArray(comparatifsRes?.data) ? comparatifsRes.data : []);
-        setParticipatives(Array.isArray(participativesRes?.data) ? participativesRes.data : []);
+        setComparatifs(Array.isArray(comparatifsRes?.data?.data) ? comparatifsRes.data.data : []);
+        setParticipatives(Array.isArray(participativesRes?.data?.data) ? participativesRes.data.data : []);
         
         setError('');
       } catch (err) {
