@@ -42,6 +42,26 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  /**
+   * Fonction pour gérer l'export des données en appelant l'API.
+   * Le navigateur téléchargera automatiquement le fichier Excel reçu.
+   */
+  const exporterDonnees = () => {
+    // L'URL complète de votre API si elle est sur un autre domaine/port,
+    // sinon le chemin relatif suffit.
+    const urlApi = '/api/participative/export';
+
+    try {
+      // Redirige simplement le navigateur vers l'URL de l'API.
+      // Pour une requête GET qui renvoie un fichier, c'est la méthode la plus simple.
+      window.location.href = urlApi;
+    } catch (erreur) {
+      console.error("Erreur lors de la tentative d'export :", erreur);
+      // Affichez une alerte ou un message d'erreur à l'utilisateur si nécessaire.
+      alert("L'exportation a échoué. Veuillez réessayer.");
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -106,9 +126,12 @@ const AdminDashboard = () => {
             <section>
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-semibold text-text-primary flex items-center"><TableCellsIcon className="h-7 w-7 mr-3 text-primary"/>Liste des Enquêtes</h2>
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition">
+                    <button 
+                        onClick={exporterDonnees}
+                        className="flex items-center space-x-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition"
+                    >
                         <ArrowDownTrayIcon className="h-5 w-5"/>
-                        <span>Exporter tout (CSV)</span>
+                        <span>Exporter en Excel</span>
                     </button>
                 </div>
                 <div className="space-y-8">
