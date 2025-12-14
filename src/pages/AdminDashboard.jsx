@@ -49,7 +49,7 @@ const AdminDashboard = () => {
   const exporterDonnees = () => {
     // L'URL complète de votre API si elle est sur un autre domaine/port,
     // sinon le chemin relatif suffit.
-    const urlApi = '/api/participative/export';
+    const urlApi = 'https://backend-enquete.vercel.app/api/participative/export';
 
     try {
       // Redirige simplement le navigateur vers l'URL de l'API.
